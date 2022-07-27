@@ -42,13 +42,13 @@ body {
   border-radius: .4rem;
   overflow: hidden;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  /*cursor: pointer;*/
   transition: 0.2s;
 }
-.grid__item:hover {
+/*.grid__item:hover {
   transform: translateY(-0.5%);
   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
-}
+}*/
 
 .card__img {
   display: block;
