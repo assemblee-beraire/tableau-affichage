@@ -1,477 +1,175 @@
 <!DOCTYPE html>
 <html lang="fr" >
-<head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163232560-1"></script>
-        <script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-163232560-1');
-	</script>
-	
-	<script>
-		function goZoom(langue,conf,NomFamille) {
-		  sessionStorage.setItem("autosave",NomFamille);
-
-		  if((sessionStorage.getItem("autosave")==null) || (sessionStorage.getItem("autosave")=="") || (sessionStorage.getItem("autosave")=="null")){
-			NomFamille="Inconnu";
-			}
-
-		  var userAgent = window.navigator.userAgent,
-		      platform = window.navigator.platform,
-		      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-		      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-		      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-		      os = null;
-
-		  if (macosPlatforms.indexOf(platform) !== -1) {
-		    window.open('zoommtg://zoom.us/join?confno='+conf+'&pwd=2414&uname='+langue+NomFamille);
-		  } else if (iosPlatforms.indexOf(platform) !== -1) {
-		    window.open('zoomus://zoom.us/join?confno='+conf+'&pwd=2414&uname='+langue+NomFamille);
-		  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-		    window.open('zoommtg://zoom.us/join?confno='+conf+'&pwd=2414&uname='+langue+NomFamille);
-		  } else if (/Android/.test(userAgent)) {
-		    window.open('zoomus://zoom.us/join?confno='+conf+'&pwd=2414&uname='+langue+NomFamille);
-		  } else{
-		    window.open('https://zoom.us/j/'+conf);
-		  }
-		}
-
-
-		function openZoom(langue,conf){
-			if((sessionStorage.getItem("autosave")!=null) && (sessionStorage.getItem("autosave")!="") && (sessionStorage.getItem("autosave")!="null")){
-			 goZoom(langue,conf,sessionStorage.getItem("autosave"));
-		  }else{
-
-		    goZoom(langue,conf,prompt("Quel est ton nom de famille?", "Nom de famille"));
-		  }
-		}
-	</script>
+<head>       
 
   <meta charset="UTF-8">
-  <title>Tableau d'affichage - La Chapelle</title>
+  <title>Tableau d'affichage - Orléans Béraire</title>
+  <meta name="description" content="Tableau d'affichage - Orléans Béraire">
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="LOGO.png">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html class="no-js" lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Tableau d'affichage - La Chapelle">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tableau d'affichage - La Chapelle</title>
-  </head>
-</html>
-
-
-
-
-
 
 <div class="grid">
 
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 	<!-- Réunions -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 	
   <div class="grid__item">
-    <div class="card"><img class="card__img" src="sdr-olc.png" alt="image">
+    <div class="card"><img class="card__img" src="sdr-ab.png" alt="image" />
       <div class="card__content">
+
+        <!-- Titre -->
         <h1 class="card__header">Réunions de l'assemblée</h1>
-		<!--
-		<button class="card__btn" onclick="window.open('https://zoom.us/j/3337702737');">Accéder à la réunion <span>&rarr;</span></button>
-        <p class="card__text">En cliquant sur <strong>"Accéder à la réunion"</strong>, tu seras <strong>redirigé</strong> vers une salle de conférence <strong>Zoom</strong>.</p>
-        -->	
-	      <button class="card__btn" onclick="window.open('Documents/VCM1.pdf')">VCM Novembre-Décembre <span>&rarr;</span></button>
-		</br>
-		<button class="card__btn" onclick="window.open('Documents/VCM2.pdf')">VCM Janvier-Février <span>&rarr;</span></button>
-		</br>
-                <button class="card__btn" onclick="window.open('Documents/programme.pdf')">programme semaine spéciale du 25/02 au 02/03 <span>&rarr;</span></button>
-		</br>
-	       <!-- <button class="card__btn" onclick="window.open('Documents/DP1.pdf')">Week-end novembre-décembre <span>&rarr;</span></button>
-		</br> -->
-		<button class="card__btn" onclick="window.open('Documents/DP2.pdf')">Week-end janvier-février <span>&rarr;</span></button>
-		</br>
-	       	<button class="card__btn" onclick="window.open('Documents/Programme Accueil Audiovisuel.pdf')">Accueil-Technique <span>&rarr;</span></button>
-		</br><!--
-		<button class="card__btn" onclick="window.open('Documents/Technique 2.pdf')">Sono-vidéo janvier-février <span>&rarr;</span></button>
-		</br>
-	        <button class="card__btn" onclick="window.open('Documents/Accueil.pdf')">Préposés à l'accueil <span>&rarr;</span></button>
-		</br>-->
-		<button class="card__btn" onclick="window.open('Documents/Programme de nettoyage.pdf')">Programme de nettoyage<span>&rarr;</span></button>
-		<!--
-		<button class="card__btn" onclick="window.open('Documents/Mémorial.pdf')">Mémorial<span>&rarr;</span></button>
-		-->
+
+		    <!-- Boutons pour télécharger les documents -->	
+        <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+        <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+	      <a href="Documents/VCM1.pdf">VCM Novembre-Décembre</a>
+		    <a href="Documents/VCM2.pdf">VCM Janvier-Février</a>
+		    <!-- <a href="Documents/DP1.pdf">Week-end novembre-décembre</a> -->
+		    <a href="Documents/DP2.pdf">Week-end janvier-février</a>
+        <a href="Documents/Programme Accueil Audiovisuel.pdf">Accueil-Technique</a>
+        <a href="Documents/Programme de nettoyage.pdf">Programme de nettoyage</a>
       </div>
     </div>
   </div>
+
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<!-- English Group -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 	
   <div class="grid__item">
-    <div class="card"><img class="card__img" src="sdr-en.png" alt="image">
+    <div class="card"><img class="card__img" src="sdr-en.png" alt="image" />
       <div class="card__content">
+        <!-- Titre -->
         <h1 class="card__header">Groupe anglais</h1>
-		<!--
-        <button class="card__btn" onclick="window.open('https://zoom.us/j/8978112964')">Accéder à la réunion <span>&rarr;</span></button>
-        <p class="card__text">En cliquant sur <strong> "Accéder à la réunion" </strong>, tu seras <strong> redirigé </strong> vers une salle de conférence <strong> Zoom </strong>.</p>
-		-->
-    <button class="card__btn" onclick="window.open('Documents/Bible Talks - 20250127.pdf')">Public Talks <span>&rarr;</span></button>
-  </br>
-<button class="card__btn" onclick="window.open('Documents/CLM January February 2025 V3.pdf')">Midweek Meeting January-February <span>&rarr;</span></button>
-  </br>
-<button class="card__btn" onclick="window.open('Documents/CLM March April 2025 V1.pdf')">Midweek Meeting March-April <span>&rarr;</span></button>
-  </br>
-<button class="card__btn" onclick="window.open('Documents/WT Verses reader Nov 2024 - June 2025  V1.pdf')">Watchtower Verses Readers <span>&rarr;</span></button>
-  </br>
-<button class="card__btn" onclick="window.open('Documents/ORLEANS LA CHAPELLE ENGLISH GROUP CO APRIL 24.pdf')">Ermanno's Visit program <span>&rarr;</span></button>
-  </br>
-  <button class="card__btn" onclick="window.open('Documents/Organizational Chart 20241106.pdf')">Organizational Chart <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/S-302 G1 Orleans.pdf')">Circuit Visit <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/2024 02 26 S-317 EU-E-6 Part A Dreux.pdf')">Circuit Assemblies <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/LLH_Dreux_AC2025v04.pdf')"> Lodging Circuit Assemblies 2025 <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/Invitation RC CO-37.pdf')">Regional Convention 2025 <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/Lieux hebergement CO-35.pdf')"> Lodging list RC 2025 <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('Documents/CO-39_E.pdf')"> Reminders Making Reservations Lodging RC 2025 <span>&rarr;</span></button>
-</br>
-<button class="card__btn" onclick="window.open('https://docs.google.com/document/d/1yvUT6-Uq0U1Qu2P0qb5P7pksBGh47wHpjnv9DX-iPW0/edit?usp=sharing')">Cart Witnessing Arrangements <span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>
-  <!--
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="sdr-al.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Réunions albanaise</h1>
-        <button class="card__btn" onclick="window.open('https://zoom.us/j/329595610')">Accéder à la réunion <span>&rarr;</span></button>
-        <p class="card__text">En cliquant sur <strong> "Accéder à la réunion" </strong>, tu seras <strong> redirigé </strong> vers une salle de conférence <strong> Zoom </strong>.</p>
-        <button class="card__btn" onclick="window.open('Documents/ClasseLectureAlbanais.pdf')">Programme de l'école<span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>-->
-  
-<!--Prédication et publication -->
-  
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="pre.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Prédication</h1>
-		<!--
-		<button class="card__btn" onclick="window.open('https://zoom.us/j/8978112964')">Acceder à la réunion <span>&rarr;</span></button>
-        <p class="card__text">En cliquant sur <strong> "Accéder à la réunion" </strong>, tu seras <strong> redirigé </strong> vers une salle de conférence <strong> Zoom </strong>.</p>
-		-->
-		<button class="card__btn" onclick="window.open('Documents/en semaine.pdf')">en semaine<span>&rarr;</span></button>
-		</br>
-		<button class="card__btn" onclick="window.open('Documents/dimanche 10h + TPL.pdf')">du dimanche 10h<span>&rarr;</span></button>
-		</br>
-	    	<button class="card__btn" onclick="window.open('Documents/Nos PP.pdf')">Nos pionniers permanents<span>&rarr;</span></button>
-     		</br>
-		<button class="card__btn" onclick="window.open('Documents/PA du mois.pdf')">Nos pionniers auxiliaires du mois<span>&rarr;</span></button>
-	    	<!--
-	        <button class="card__btn" onclick="window.open('Documents/Groupes.pdf')">Groupes de prédication<span>&rarr;</span></button>
-			-->
-      </div>
-    </div>
-  </div>
-  <!--
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="ter.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Demander un territoire</h1>
-        <p class="card__text">Pour <strong> demander </strong> ou <strong> rendre </strong> un territoire, tu peux le faire par mail à luc.penverne@free.fr ou en cliquant le <strong> bouton ci-dessous </strong>. Si tu préfères, tu peux contacter frère <strong> Luc Penverne </strong>.</p>
-        <button class="card__btn" onclick="window.location.href='mailto:luc.penverne@free.fr?subject=Territoire';">Demander/Rendre territoire <span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="pub.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Commander une publication</h1>
-        <p class="card__text">Pour <strong> commander </strong> une publication, tu peux le faire par mail à alaingandon1948@gmail.com ou en cliquant sur le <strong> bouton ci-dessous </strong>. Si tu préfères, tu peux contacter frère <strong> Alain Gandon </strong>.</p>
-        <button class="card__btn" onclick="window.location.href='mailto:alaingandon1948@gmail.com?subject=Commande de publication&body=Ton%20nom%20et%20prenom%20%3A%0D%0A%0D%0ANombre de publications à commander par langue (par exemple, - 1 Bible en langue Français)%20%3A%0D%0A%0D%0A-%0D%0A%0D%0A-%0D%0A%0D%0A';">Commander publications <span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>
-   -->
 
-<!-- Communications prédication -->
+		    <!-- Boutons pour télécharger les documents -->	
+        <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+        <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+        <a href="Documents/Bible Talks - 20250127.pdf">Public Talks</a>
+        <a href="Documents/CLM January February 2025 V3.pdf">Midweek Meeting January-February</a>
+        <a href="Documents/CLM March April 2025 V1.pdf">Midweek Meeting March-April</a>
+        <a href="Documents/WT Verses reader Nov 2024 - June 2025  V1.pdf">Watchtower Verses Readers</a>
+        <!--<a href="Documents/ORLEANS LA CHAPELLE ENGLISH GROUP CO APRIL 24.pdf">Ermanno's Visit program</a>-->
+        <a href="Documents/Organizational Chart 20241106.pdf">Organizational Chart</a>
+        <!--<a href="Documents/S-302 G1 Orleans.pdf">Circuit Visit</a>-->
+        <a href="Documents/2024 02 26 S-317 EU-E-6 Part A Dreux.pdf">Circuit Assemblies</a>
+        <a href="https://docs.google.com/document/d/1yvUT6-Uq0U1Qu2P0qb5P7pksBGh47wHpjnv9DX-iPW0/edit?usp=sharing">Cart Witnessing Arrangements</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!--Prédication et publication -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  
   <div class="grid__item">
-    <div class="card"><img class="card__img" src="pasto.png" alt="image">
+    <div class="card"><img class="card__img" src="pre.png" alt="image" />
       <div class="card__content">
+        <!-- Titre -->
+        <h1 class="card__header">Prédication</h1>
+
+        <!-- Boutons pour télécharger les documents -->	
+        <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+        <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+		    <a href="Documents/en semaine.pdf">en semaine</a>
+        <a href="Documents/dimanche 10h + TPL.pdf">du dimanche 10h</a>
+        <a href="Documents/Nos PP.pdf">Nos pionniers permanents</a>
+        <a href="Documents/PA du mois.pdf">Nos pionniers auxiliaires du mois</a>
+        <a href="Documents/Groupes de prédication.pdf">Groupes de prédication</a>
+	    	<!--<a href="Documents/Groupes.pdf">Groupes de prédication</a> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!-- Communications -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <div class="grid__item">
+    <div class="card"><img class="card__img" src="com/com-1.png" alt="image" />
+      <div class="card__content">
+        <!-- Titre -->
         <h1 class="card__header">Communications</h1>
-		<!--
-		<button class="card__btn" onclick="window.open('Documents/S-307.pdf')">Changements concernant la circonscription<span>&rarr;</span></button>
-		</br>
-		<button class="card__btn" onclick="window.open('Documents/Mémorial 2024.pdf')">Mèmorial 2024<span>&rarr;</span></button>
-  		</br>
-	        -->
-		<button class="card__btn" onclick="window.open('Documents/S-302.pdf')">Semaine spéciale<span>&rarr;</span></button>
-                </br>
-                <button class="card__btn" onclick="window.open('Documents/S-317 CE-02A.pdf')">Assemblées de circonscription<span>&rarr;</span></button>
-		</br><!--
-	        <button class="card__btn" onclick="window.open('Documents/com 04 1120 24_réunion comité filiale.pdf')">Visite de la filiale par des représentants du siège mondial<span>&rarr;</span></button>
-		-->
-      		</br>
-		<button class="card__btn" onclick="window.open('Documents/Nouvelles parutions.pdf')">Nouvelles parutions<span>&rarr;</span></button>
-     	 	</br>
-		<button class="card__btn" onclick="window.open('Documents/C et R.pdf')">Communications et rappels<span>&rarr;</span></button>
-		</br><--
-	        <button class="card__btn" onclick="window.open('Documents/soutien activités LDC Centre.pdf')">Soutien aux activités du LDC en région centre<span>&rarr;</span></button>
-		</br>
-	      	<button class="card__btn" onclick="window.open('Documents/com 13 10 23-rapport activité.pdf')">comment rapporter son activité de prédication<span>&rarr;</span></button>
-	        -->
-		</br>
-	        <button class="card__btn" onclick="window.open('Documents/organigramme.pdf')">Organigramme de l'assemblée<span>&rarr;</span></button>
-		</br>
-		<button class="card__btn" onclick="window.open('Documents/Groupes de prédication.pdf')">Groupes de prédication<span>&rarr;</span></button>
-		</br><!--
-		<button class="card__btn" onclick="window.open('Documents/Reprise des visites au Béthel.pdf')">Reprise des visites au Béthel<span>&rarr;</span></button>
-	        </br>
-	        <button class="card__btn" onclick="window.open('Documents/Tenue vestimentaire.pdf')">Tenue pour visiter le Béthel<span>&rarr;</span></button>
-	        </br>-->
-	        <button class="card__btn" onclick="window.open('Documents/Projets_filiale de France de juillet 2024.pdf')">Actualités<span>&rarr;</span></button>
-	        </br>
-	        -->
-	</div>
+
+        <!-- Boutons pour télécharger les documents -->	
+        <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+        <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+		    <a href="Documents/S-302.pdf">Semaine spéciale</a>
+        <a href="Documents/S-317 CE-02A.pdf">Assemblées de circonscription</a>
+        <a href="Documents/Nouvelles parutions.pdf">Nouvelles parutions</a>
+        <a href="Documents/C et R.pdf">Communications et rappels</a>
+        <a href="Documents/soutien activités LDC Centre.pdf">Soutien aux activités du LDC en région centre</a>
+        <a href="Documents/com 13 10 23-rapport activité.pdf">comment rapporter son activité de prédication</a> 
+        <a href="Documents/organigramme.pdf">Organigramme de l'assemblée</a>
+        <!-- <a href="Documents/Projets_filiale de France de juillet 2024.pdf">Actualités</a> -->
+	    </div>
     </div>
   </div>
 	
-<!-- Assemblée régionale -->
+   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+   <!-- Assemblée régionale (Français) -->
+   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
    <div class="grid__item">
-    <div class="card"><img class="card__img" src="pasto.png" alt="image">
+    <div class="card"><img class="card__img" src="com/com-2.png" alt="image" />
       <div class="card__content">
-        <h1 class="card__header">Assemblée régionale 2025</h1>
-	      	</br>
-		<button class="card__btn" onclick="window.open('Documents/AR invitation.pdf')">Assemblée Française Dreux<span>&rarr;</span></button>
-  		</br>
-	        <button class="card__btn" onclick="window.open('Documents/AR Info hébergement.pdf')">Information liste des lieux d'hébergement - Dreux<span>&rarr;</span></button>
- 		</br>
-	        <button class="card__btn" onclick="window.open('Documents/AR réservation de chambres.pdf')">Rappels pour la réservation de chambres<span>&rarr;</span></button>
-                <!--
-	        <button class="card__btn" onclick="window.open('Documents/CO-37-F-Creil.pdf')">Assemblée Anglaise Creil<span>&rarr;</span></button>
-		</br>
-		<button class="card__btn" onclick="window.open('Documents/CO-35-F-Creil.pdf')">Information liste des lieux d'hébergement - Creil<span>&rarr;</span></button>
+        <!-- Titre -->
+        <h1 class="card__header">Assemblée régionale</h1>
+        
+        <!-- Boutons pour télécharger les documents -->	
+        <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+        <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+		    <a href="Documents/AR invitation.pdf">Assemblée Française Dreux</a>
+        <a href="Documents/AR Info hébergement.pdf">Information liste des lieux d'hébergement - Dreux</a>
+        <a href="Documents/AR réservation de chambres.pdf">Rappels pour la réservation de chambres</a>
       </div>
     </div>
-  </div>
--->
-  
-<!-- Assemblées spéciales
+  </div> 
+	
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!-- Regional convention (English) -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
   <div class="grid__item">
-    <div class="card"><img class="card__img" src="com.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Assemblées spéciales 2025</h1> 
-	<!--
-        </br>
-	<button class="card__btn" onclick="window.open('Documents/AR info Ass sp en France.pdf')">Assemblées spéciales en France<span>&rarr;</span></button>
-        </br>
-	<button class="card__btn" onclick="window.open('Documents/com 14 11 23-volontaires pour assemblées spéciales.pdf')">Volontaires pour assemblées spéciales<span>&rarr;</span></button>
-        </br>
-        <button class="card__btn" onclick="window.open('Documents/AS info candidatures.pdf')">Candidatures<span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>
--->
+   <div class="card"><img class="card__img" src="com/com-3.png" alt="image" />
+     <div class="card__content">
+       <!-- Titre -->
+       <h1 class="card__header">Regional convention</h1>
+       
+       <!-- Boutons pour télécharger les documents -->	
+       <!-- Pour ajouter un nouveau document dupliquer une ligne commençant par "a" et modifier le chemin et le nom du document -->
+       <!-- Pour masquer sans supprimer une ligne il suffit de l'entourer des mêmes caractères que cette ligne -->
+      <a href="Documents/LLH_Dreux_AC2025v04.pdf">Lodging Circuit Assemblies 2025</a>
+      <a href="Documents/Invitation RC CO-37.pdf">Regional Convention 2025</a>
+      <a href="Documents/Lieux hebergement CO-35.pdf"> Lodging list RC 2025</a>
+      <a href="Documents/CO-39_E.pdf"> Reminders Making Reservations Lodging RC 2025</a>
+
+     </div>
+   </div>
+ </div>  
   
-  <!-- Ministère des secours
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="com.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Ministère des secours</h1>
-        <p class="card__text">Les produits de <strong> première nécessité </strong>.</p>
-        <button class="card__btn"  onclick="window.open('Documents/Ministère des secours.pdf')" >Lire la communication <span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>
--->
-  
-  <!-- Communications de l'assemblé 
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="com.png" alt="image">
-      <div class="card__content">
-        <h1 class="card__header">Communications Assemblée</h1>
-        <p class="card__text"><strong> Communications </strong> liées à l'assemblée.</p>
-
-		<button class="card__btn" onclick="window.open('Documents/InstructionsCovid-19.pdf')" >Instructions Covid-19<span>&rarr;</span></button>
-	      </br>
-	        <button class="card__btn" onclick="window.open('Documents/LettreAssemblee.pdf')" >Lettre des anciens<span>&rarr;</span></button>
-      </div>
-    </div>
-  </div>-->
-
-  
-  
-</div>
-
-
-
-
-<!-- partial -->
-  
+</div> <!-- Grid -->
+ 
 </body>
 </html>
 
-
-
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-
-<!--
-<div id="id01" class="modal">
-  
-  <div class="modal-content animate" >
-
-    <div class="container">
-      <label for="psw"><H1>Mot de passe</H1></label>
-      <input id="inputPassword" type="password" placeholder="Entrez le mot de passe" name="psw" required>
-        
-      <button onclick="myFunction()" type="submit">Connexion</button>
-
-    </div>
-  </div>
-</div>
-
 <script>
 
-// Get the modal
-var modal = document.getElementById('id01');
+  // Get all a tags within elements with class card__content
+  const links = document.querySelectorAll('.card__content a');
+  
+  // Loop through each link
+  links.forEach(link => {
+    // Add your class to each link
+    link.classList.add('card__btn');    
+    // Make links open in a new window
+    link.setAttribute('target', '_blank');    
+    // For better accessibility and security when opening in new window
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
 
-modal.style.display = "block";
-
-function myFunction() {
-  if(document.getElementById("inputPassword").value=="1919"){
-    modal.style.display = "none";
-  }
-    
-}
 
 </script>
--->
 
