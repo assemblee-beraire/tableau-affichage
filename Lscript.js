@@ -1,1 +1,0 @@
-setTimeout(() => {  window.location='0.html'; }, 2000);
